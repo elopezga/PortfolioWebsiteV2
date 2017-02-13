@@ -113,7 +113,7 @@ $(document).ready(function(){
         },
 
         buildSideMenu: function(){
-            let html = `<div class="ui vertical fluid menu">
+            let html = `<div class="ui vertical fluid tabular menu">
             <div class="uk-margin-small-left uk-margin-small-right uk-margin-small-top
             uk-margin-large-bottom">
                 <img class="ui medium centered circular image uk-margin-small-bottom" src="images/me/dog.jpeg">
@@ -130,7 +130,7 @@ $(document).ready(function(){
             </div>`;
             $('.four.wide.column').html(html);
 
-            $('.menu .item').tab();
+
         },
 
         buildContent: function(){
@@ -140,6 +140,8 @@ $(document).ready(function(){
             <div class="ui tab" data-tab='gamedevex'>Game Development content</div>
             <div class="ui tab" data-tab='softex'>Software Engineering content</div>`;
             $('.twelve.wide.column').html(html);
+
+            $('.menu .item').tab();
         }
     };
 
