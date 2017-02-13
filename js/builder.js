@@ -6,28 +6,20 @@ $(document).ready(function(){
             mobileLayout.build();
         }
     });
-    if( mobileMediaQuery.matches ){
-        console.log('Set mobile layout');
-    }
+
 
     let tabletMediaQuery = window.matchMedia('(min-width:480px) and (max-width:959px)');
     tabletMediaQuery.addListener(function(changed){
         if( changed.matches ){
             console.log('Set tablet layout');
-            buildTabletLayout();
+            //buildTabletLayout();
+            tabletLayout.build();
         }
     });
-    if( tabletMediaQuery.matches ){
-        console.log('Set tablet layout');
-        //$('.nav-main').html(navMainTablet());
-        buildTabletLayout();
 
-    }
 
     let desktopMediaQuery = window.matchMedia('(min-width:960px)');
-    if( desktopMediaQuery.matches ){
-        console.log('Set desktop layout');
-    }
+
 
 
     var mobileLayout = {
@@ -99,6 +91,73 @@ $(document).ready(function(){
 
             $('.dropdown').dropdown();
         }
+    };
+
+
+    var tabletLayout = {
+        build: function(){
+            this.buildLayout();
+            this.buildSideMenu();
+            this.buildContent();
+        },
+
+        buildLayout: function(){
+            let html = `<div class='ui grid'>
+                <div class='four wide column stretched uk-height-viewport'>
+                </div>
+                <div class='twelve wide column'>
+                </div>
+            </div>`;
+
+            $('body').html(html);
+        },
+
+        buildSideMenu: function(){
+            let html = `<div class="ui vertical fluid menu">
+            <div class="uk-margin-small-left uk-margin-small-right uk-margin-small-top
+            uk-margin-large-bottom">
+                <img class="ui medium centered circular image uk-margin-small-bottom" src="images/me/dog.jpeg">
+                <h4 class="uk-text-center uk-margin-remove">Edgar Lopez-Garcia</h4>
+                <h6 class="uk-text-center uk-margin-remove">Web Developer</h6>
+                <h6 class="uk-text-center uk-margin-remove">Game Developer</h6>
+                <h6 class="uk-text-center uk-margin-remove">Software Engineer</h6>
+            </div>
+                <a class="item active" data-tab='home'>Home</a>
+                <a class="item" data-tab='skillset'>Skill Set</a>
+                <a class="item" data-tab='webdevex'>Web Development</a>
+                <a class="item" data-tab='gamedevex'>Game Development</a>
+                <a class="item" data-tab='softex'>Software Engineering</a>
+            </div>`;
+            $('.four.wide.column').html(html);
+
+            $('.menu .item').tab();
+        },
+
+        buildContent: function(){
+            let html = `<div class="ui tab active" data-tab='home'>Home content</div>
+            <div class="ui tab" data-tab='skillset'>Skill Set content</div>
+            <div class="ui tab" data-tab='webdevex'>Web Development content</div>
+            <div class="ui tab" data-tab='gamedevex'>Game Development content</div>
+            <div class="ui tab" data-tab='softex'>Software Engineering content</div>`;
+            $('.twelve.wide.column').html(html);
+        }
+    };
+
+    if( mobileMediaQuery.matches ){
+        // For initial window load
+        console.log('Set mobile layout');
+        mobileLayout.build();
+    }
+
+    if( tabletMediaQuery.matches ){
+        console.log('Set tablet layout');
+        //$('.nav-main').html(navMainTablet());
+        //buildTabletLayout();
+        tabletLayout.build();
+    }
+
+    if( desktopMediaQuery.matches ){
+        console.log('Set desktop layout');
     }
 });
 
