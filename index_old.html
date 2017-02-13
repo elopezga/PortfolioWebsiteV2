@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Edgar Lopez-Garcia</title>
+        <link rel="stylesheet" href="css/uikit.min.css">
+        <link rel="stylesheet" href="css/semantic.min.css">
+        <script src="js/jquery-3.1.1.min.js"></script>
+        <script src="js/uikit.min.js"></script>
+        <script src="js/semantic.min.js"></script>
+        <script src="js/init.js"></script>
+    </head>
+    <body>
+
+
+        <div uk-grid>
+            <div class="uk-card uk-card-default uk-width-1-5@m" style="height: 100vh;">
+                <ul class="uk-padding-small uk-nav-default uk-nav-parent-icon uk-height-1-1 menu" uk-nav>
+                    <li><img class="uk-border-circle" src="images/me/dog.jpeg" /></li>
+                    <li class="uk-margin-medium-top"><h3>Edgar Lopez-Garcia</h3></li>
+                    <li><h5>Web Developer</h5></li>
+                    <li><h5>Game Developer</h5></li>
+                    <li><h5>Software Engineer</h5></li>
+                    <li class="uk-nav-divider"></li>
+                    <li class="uk-active"><a class='item active' data-tab="home" href="#">Home</a></li>
+                    <li><a class='item' data-tab="skillset" href="#">Skill Set</a></li>
+                    <li class='uk-parent'>
+                        <a href="#">Experience</a>
+                        <ul class="uk-nav-sub">
+                            <li><a class="item" data-tab='webdevex'>Web Development</a></li>
+                            <li><a class="item" data-tab='gamedevex'>Game Development</a></li>
+                            <li><a class="item" data-tab='profex'>Professional Experience</a></li>    
+                        </ul>    
+                    </li>
+                </ul>
+            </div>
+
+            <div class="uk-width-4-5@m">
+
+                <div class="ui tab active" data-tab='home'>
+                    Home content
+                </div>
+                <div class="ui tab" data-tab='skillset'>
+                    Skill Set content
+                </div>
+                <div class="ui tab" data-tab='webdevex'>
+                    Web Development content
+                </div>
+                <div class="ui tab" data-tab='gamedevex'>
+                    Game Development content
+                </div>
+                <div class="ui tab" data-tab='profex'>
+                    Professional content
+                </div>
+
+            </div>
+        </div>
+
+        
+        <!--
+        <div class="ui top attached tabular menu">
+            <a class="item active" data-tab="first">First</a>
+            <a class="item" data-tab="second">Second</a>
+            <a class="item" data-tab="third">Third</a>
+        </div>
+
+        <div class="ui bottom attached tab segment active" data-tab="first">
+            First
+        </div>
+        <div class="ui bottom attached tab segment" data-tab="second">
+            Second
+        </div>
+        <div class="ui bottom attached tab segment" data-tab="third">
+            Third
+        </div>
+        -->
+
+    </body>
+</html>
